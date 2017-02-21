@@ -1,4 +1,6 @@
-package homework.lesson2;
+package boss;
+
+import boss.Boss;
 
 /**
  * @author Света on 19.02.2017.

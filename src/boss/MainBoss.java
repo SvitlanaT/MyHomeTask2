@@ -1,4 +1,4 @@
-package homework.lesson2;
+package boss;
 
 /**
  * @author Света on 19.02.2017.

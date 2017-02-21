@@ -8,4 +8,9 @@ public class Mazda5 extends Mazda{
     public boolean inProduction(int number) {
         return super.inProduction(number);
     }
+
+    @Override
+    public void drive() {
+        System.out.println("I'm driving mazda 5");
+    }
 }

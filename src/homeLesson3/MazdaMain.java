@@ -9,5 +9,8 @@ public class MazdaMain {
         Mazda testCar2 = new Mazda5();
         System.out.println(testCar1.inProduction(3));
         System.out.println(testCar2.inProduction(0));
+        testCar1.drive();
+        testCar2.drive();
+        System.out.println(Mazda.class.getSimpleName());
     }
 }
