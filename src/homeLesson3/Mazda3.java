@@ -3,7 +3,7 @@ package homeLesson3;
 /**
  * @author Света on 21.02.2017.
  */
-public class Mazda3 extends Mazda implements Drivable {
+class Mazda3 extends Mazda implements Drivable {
 
 
     @Override

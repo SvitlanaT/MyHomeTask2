@@ -3,8 +3,9 @@ package boss;
 /**
  * @author Света on 19.02.2017.
  */
-public class Boss {
+class Boss {
     public void hobby(){
+
         System.out.println("I am singing");
         eat();
     }
