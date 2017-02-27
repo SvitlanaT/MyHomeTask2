@@ -12,14 +12,26 @@ public class WordsArray {
         File words = new File("res/words");
         File file = new File("res/file.txt");
         int numberOfWords = 0;
-        String [] wordsArray = new String[5];
+        int i = 0;
+        try(BufferedReader buf = new BufferedReader(new FileReader(words))) {
+            final StreamTokenizer tokenizer =new StreamTokenizer(buf);
+            while (tokenizer.nextToken() != StreamTokenizer.TT_EOF) {
+                if (tokenizer.ttype == StreamTokenizer.TT_WORD) {
+                    numberOfWords++;
+                }
+            }
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+
+        String [] wordsArray = new String[numberOfWords];
           try(BufferedReader buf = new BufferedReader(new FileReader(words))) {
             final StreamTokenizer tokenizer =new StreamTokenizer(buf);
             while (tokenizer.nextToken() != StreamTokenizer.TT_EOF) {
                 if (tokenizer.ttype == StreamTokenizer.TT_WORD) {
-                    wordsArray[numberOfWords] = tokenizer.sval;
+                    wordsArray[i] = tokenizer.sval;
                     System.out.println(tokenizer.sval);
-                    numberOfWords++;
+                    i++;
                 }
 
             }
@@ -33,8 +45,9 @@ public class WordsArray {
 
         try (FileWriter fileWriter = new FileWriter(file, true)) {
 
-            for (int i = 4; i >= 0; i--)
+            for ( i = numberOfWords-1; i >= 0; i--) {
                 fileWriter.write(wordsArray[i] + " ");
+            }
             fileWriter.flush();
         } catch (IOException e) {
             e.printStackTrace();
